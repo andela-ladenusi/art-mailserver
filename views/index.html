@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <link rel='stylesheet' type='text/css' href='/styles/style.css'>
+    <link rel='stylesheet' type='text/css' href='http://www.kano.me/css/fonts.css'>
+    <script type="text/javascript" src="/js/prefixfree.min.js"></script>
+</head>
+
+<body>
+
+    <a class='card' href='http://world.kano.me/shared/<%= itemId %>' target='_blank'>
+        <img class='card-face card-face-front' src='https://s3-eu-west-1.amazonaws.com/world.kano.me/share-items/covers/<%= itemId %>.png'>
+        <div class='card-face card-face-back'>
+            <div class='card-face-back-message'>
+                <%- message %>
+                <p class="card-face-back-signature"><%- signature %></p>
+            </div>
+        </div>
+    </a>
+
+    <script src="//use.edgefonts.net/cedarville-cursive.js"></script>
+</body>
+
+</html>

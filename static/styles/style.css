@@ -1,0 +1,212 @@
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Bariol', Helvetica, Arial, sans-serif;
+}
+
+@media screen and (min-width: 400px) {
+    body {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        font-size: 2.75em;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    body {
+        font-size: 3.5em;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    body {
+        font-size: 4.75em;
+    }
+}
+
+.card {
+    display: block;
+    width: 10em;
+    height: 10em;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-perspective: 2500;
+    cursor: pointer;
+    transition: transform 0.5s ease-out;
+}
+
+.form {
+    padding: 20px;
+    margin: auto;
+    max-width: 400px;
+    margin-top: 30px;
+}
+
+input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    font-family: 'Bariol', Helvetica, Arial, sans-serif;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+textarea {
+    min-height: 150px;
+}
+
+.card.edit {
+    width: 8em;
+    height: 8em;
+    transform: translate(-50%, 0);
+    top: 0;
+    margin-top: 100px;
+    transform: translate(0, 0);
+}
+
+.card.edit:hover {
+    transform: translate(0, 0);
+}
+
+.card:hover {
+    transform: translate(0, -50%);
+}
+
+.card:hover .card-face-front, .card.open .card-face-front {
+    transform: rotateY(-165deg);
+}
+
+.card:hover .card-face-back, .card.open .card-face-back {
+    transform: rotateY(-15deg);
+}
+
+.card-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: visible;
+    transition: transform 0.5s ease-out;
+    transform-origin: 0 0;
+}
+
+.card-face-front {
+    display: block;
+    transform: rotateY(-40deg);
+    z-index: 2;
+}
+
+.card-face-back {
+    background: #9dcc78;
+    transform: rotateY(0deg);
+    z-index: 1;
+}
+
+.card-face-back-message {
+    padding: .5em;
+    font-size: .7em;
+    font-family: Bariol, sans-serif;
+    color: white;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.card-face-back-signature {
+    font-family: cedarville-cursive, cursive;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+}
+
+p {
+    clear: both;
+    font-size: 16px
+    text-align: center;
+}
+
+.overlay {
+    display: none;
+    background: rgba(0, 0, 0, .85);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay .box {
+    background: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    width: 400px;
+    margin-left: -200px;
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.box h3 {
+    font-size: 25px;
+    margin-top: 0;
+    color: #666;
+    text-align: center;
+}
+
+button {
+    color: #fff;
+    background: #9bce64;
+    text-transform: uppercase;
+    border: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 15px;
+    font-family: 'Bariol', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.thanks {
+    background: #9bce64;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 100px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+
+.thanks h3 {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

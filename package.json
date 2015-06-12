@@ -1,0 +1,27 @@
+{
+  "name": "make-art-card",
+  "version": "0.0.0",
+  "description": "A Kano experiment.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/KanoComputing/make-art-card.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KanoComputing/make-art-card/issues"
+  },
+  "homepage": "https://github.com/KanoComputing/make-art-card",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "connect-multiparty": "^1.2.5",
+    "ejs": "^2.3.1",
+    "express": "^4.12.4",
+    "node-mandrill": "^1.0.1",
+    "urlencode": "^1.0.0"
+  }
+}

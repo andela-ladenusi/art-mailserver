@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <link rel='stylesheet' type='text/css' href='/styles/style.css'>
+    <link rel='stylesheet' type='text/css' href='http://www.kano.me/css/fonts.css'>
+    <script type="text/javascript" src="/js/prefixfree.min.js"></script>
+</head>
+
+<body>
+
+    <a class='card edit open' href='http://world.kano.me/shared/<%= itemId %>' target='_blank'>
+        <img class='card-face card-face-front' src='https://s3-eu-west-1.amazonaws.com/world.kano.me/share-items/covers/<%= itemId %>.png'>
+        <div class='card-face card-face-back'>
+            <div class='card-face-back-message'>
+                <p data-message></p>
+                <p class="card-face-back-signature" data-signature></p>
+            </div>
+        </div>
+    </a>
+
+    <div class='form'>
+        <input type='text' placeholder='Your name' data-signature-edit value='Your son'>
+        <textarea type='text' placeholder='Your message' data-message-edit>Happy Father's Day!</textarea>
+        <button data-overlay-trigger>Done</button>
+    </div>
+
+    <div class='overlay' data-overlay>
+        <div class='box'>
+            <h3>Send it!</h3>
+            <form action='/card/<%= itemId %>/send' method='post'>
+                <input type='email' placeholder='Email' name='email' required>
+                <input type='hidden' name='message' data-message-hidden>
+                <input type='hidden' name='signature' data-signature-hidden>
+                <button type='submit'>Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/js/index.js"></script>
+    <script src="//use.edgefonts.net/cedarville-cursive.js"></script>
+</body>
+
+</html>
