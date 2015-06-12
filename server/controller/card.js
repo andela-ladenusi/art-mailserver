@@ -22,7 +22,7 @@ exports.send = function (req, res) {
         message = req.body.message,
         signature = req.body.signature,
         itemId = req.params.itemId,
-        url = 'http://localhost:7000/card/' + itemId + '/?message=' + urlencode(message) + '&signature=' + urlencode(signature);
+        url = 'http://fathersday.kano.me/card/' + itemId + '/?message=' + urlencode(message) + '&signature=' + urlencode(signature);
 
     if (!email) {
         return res.status(400).send('Email required');
