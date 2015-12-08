@@ -13,10 +13,16 @@ exports.send = function (req, res) {
         from_email  : data.user_email,
         from_name   : data.name,
         to          : [ { email: data.email } ],
-        subject     : data.name + ' has sent you their latest creation, "' + data.title + '"',
-        text        : 'foobar',
-        html        : jade.renderFile('views/template.jade', data)
+        text        : 'foobar'
     };
+
+    if (data.title && data.world_url && data.cover_url) {
+        emailObj.subject = data.name + ' has sent you their latest creation, "' + data.title + '"';
+        emailObj.html = jade.renderFile('views/template.jade', data);
+    } else if (!data.title && !data.world_url && !data.cover_url) {
+        emailObj.subject = data.name + ' has invited you to Make Art';
+        emailObj.html = jade.renderFile('views/world-template.jade', data);
+    }
 
     mandrill('/messages/send', { message: emailObj }, function (err) {
 
